@@ -1,0 +1,93 @@
+{
+    "target": "https://rumahdukcapil.tangerangselatankota.go.id/",
+    "date": "2026-05-08 14:47:02",
+    "security": {
+        "missing_headers": [
+            "Strict-Transport-Security",
+            "X-Frame-Options"
+        ],
+        "weak_headers": [],
+        "cookies": [],
+        "info": {}
+    },
+    "exposures": [
+        {
+            "path": "robots.txt",
+            "status": 200,
+            "size": 1738,
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/robots.txt"
+        }
+    ],
+    "js_analysis": [],
+    "opportunities": {
+        "internal_ips": [],
+        "keywords_found": [
+            "dev"
+        ],
+        "dangerous_params": [],
+        "snippets": [
+            "KW [dev]: ...w\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http..."
+        ]
+    },
+    "cloud_buckets": [],
+    "sitemap_urls": [],
+    "liferay_findings": [
+        {
+            "path": "api/jsonws",
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/api/jsonws",
+            "type": "Liferay Protected (403/401)"
+        },
+        {
+            "path": "c/portal/login",
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/c/portal/login",
+            "type": "Liferay Protected (403/401)"
+        },
+        {
+            "path": "group/control_panel/manage",
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/group/control_panel/manage",
+            "type": "Liferay Protected (403/401)"
+        },
+        {
+            "path": "api/jsonws/user/get-user-by-id",
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/api/jsonws/user/get-user-by-id",
+            "type": "Liferay Protected (403/401)"
+        },
+        {
+            "path": "api/jsonws/company/get-company-by-id",
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/api/jsonws/company/get-company-by-id",
+            "type": "Liferay Protected (403/401)"
+        },
+        {
+            "path": "o/api",
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/o/api",
+            "type": "Liferay Protected (403/401)"
+        },
+        {
+            "path": "o/oauth2/authorize",
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/o/oauth2/authorize",
+            "type": "Liferay Protected (403/401)"
+        },
+        {
+            "path": "group/guest/~/control_panel/manage",
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/group/guest/~/control_panel/manage",
+            "type": "Liferay Protected (403/401)"
+        },
+        {
+            "path": "c/portal/layout?p_l_id=1",
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/c/portal/layout?p_l_id=1",
+            "type": "Liferay Protected (403/401)"
+        },
+        {
+            "path": "combo/?browserId=chrome&minifierType=js&languageId=en_US&b=7410&t=1625612345678",
+            "url": "https://rumahdukcapil.tangerangselatankota.go.id/combo/?browserId=chrome&minifierType=js&languageId=en_US&b=7410&t=1625612345678",
+            "type": "Liferay Protected (403/401)"
+        }
+    ],
+    "bypass_success": [],
+    "hidden_paths": [],
+    "param_mining": [],
+    "sourcemaps": [],
+    "s3_buckets": [],
+    "moodle_findings": [],
+    "wp_findings": []
+}

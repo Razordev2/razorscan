@@ -1,0 +1,8 @@
+httpx
+typer[all]
+rich
+beautifulsoup4
+pyjwt
+jinja2
+python-dotenv
+yarl

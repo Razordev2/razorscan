@@ -1,0 +1,53 @@
+{
+    "target": "https://nsc.nasa.gov",
+    "date": "2026-05-07 23:08:45",
+    "security": {
+        "missing_headers": [
+            "Content-Security-Policy",
+            "X-Frame-Options",
+            "X-Content-Type-Options",
+            "Referrer-Policy"
+        ],
+        "weak_headers": [],
+        "cookies": [],
+        "info": {}
+    },
+    "exposures": [
+        {
+            "path": "robots.txt",
+            "status": 200,
+            "size": 26,
+            "url": "https://nsc.nasa.gov/robots.txt"
+        }
+    ],
+    "js_analysis": [
+        {
+            "url": "https://nsc.nasa.gov/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZBeQL9FN26k7qxJmCXVl63Uh07YUPP75L5T8ig6z731I9NnlM7MjDVfOVnbtZyAU3Q2&t=638901392248157332",
+            "data": {
+                "endpoints": [],
+                "urls": [],
+                "secrets": []
+            }
+        },
+        {
+            "url": "https://nsc.nasa.gov/ScriptResource.axd?d=D9drwtSJ4hBA6O8UhT6CQpLQo2tZ2XWouq1So4gOUqY0KKe1EzOsTczU0xRl0n5eKfKyeAF-lJyrOfP3WtQdfN8uQSLy2uvSU1777I-PAjTI39EblEQcoFHdJ1_bkRMRpa7m_oc4zMLhs1EjXu0I2zcA9usuVgRscLWLf7Mojc81&t=5c0e0825",
+            "data": {
+                "endpoints": [],
+                "urls": [
+                    "http://www.mozilla.org/newlayout/xml/parsererror.xml"
+                ],
+                "secrets": []
+            }
+        },
+        {
+            "url": "https://nsc.nasa.gov/ScriptResource.axd?d=JnUc-DEDOM5KzzVKtsL1tYiZUsYt_xBTDhQir-ihv7ursUN-o4YtD6wK-167bi02KVsiSrYELyJM8lAirgk9xpOB-jbgvCBlmslMKNWBK111AaQ3ufAkF5xjVd6E1RNTjL3OSp0WHOd9vXkeF3iSmH-YGRNdMqgV_8y1oSE_CvgtEJWIWZalSP4KO44tgIzg0&t=5c0e0825",
+            "data": {
+                "endpoints": [
+                    "//"
+                ],
+                "urls": [],
+                "secrets": []
+            }
+        }
+    ]
+}

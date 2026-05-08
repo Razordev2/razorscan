@@ -1,0 +1,60 @@
+{
+    "target": "https://www.globe.gov/web/latin-america-and-caribbean",
+    "date": "2026-05-08 00:01:11",
+    "security": {
+        "missing_headers": [
+            "Referrer-Policy"
+        ],
+        "weak_headers": [
+            {
+                "header": "CORS",
+                "value": "*",
+                "risk": "High"
+            }
+        ],
+        "cookies": [
+            {
+                "raw": "AWSALB=Sz0bWi/fSESd1jc3rn3DRLOkWExI/NRbdgnCOCx+el1ruXm2c0g45DdwelNRGL2u3quWJdtADNBT7xKk7OyKNltR7+ymeeWo/Qza3j7I0QwDzBFfqC3TzaN4oTE+; Expires=Thu, 14 May 2026 17:00:48 GMT; Path=/, AWSALBCORS=Sz0bWi/fSESd1jc3rn3DRLOkWExI/NRbdgnCOCx+el1ruXm2c0g45DdwelNRGL2u3quWJdtADNBT7xKk7OyKNltR7+ymeeWo/Qza3j7I0QwDzBFfqC3TzaN4oTE+; Expires=Thu, 14 May 2026 17:00:48 GMT; Path=/; SameSite=None, JSESSIONID=DC397906AFFB2D5E4877E69E5F5E39C1; Path=/; Secure; HttpOnly, COOKIE_SUPPORT=true; Expires=Fri, 07 May 2027 17:00:48 GMT; Path=/; Secure; HttpOnly, GUEST_LANGUAGE_ID=en_US; Expires=Fri, 07 May 2027 17:00:48 GMT; Path=/; Secure; HttpOnly",
+                "issues": []
+            }
+        ],
+        "info": {}
+    },
+    "exposures": [],
+    "js_analysis": [],
+    "opportunities": {
+        "internal_ips": [
+            "172.21.2.206",
+            "172.21.2.206"
+        ],
+        "keywords_found": [
+            "admin",
+            "debug",
+            "config",
+            "internal",
+            "staging",
+            "dev",
+            "root",
+            "password",
+            "token",
+            "auth"
+        ],
+        "dangerous_params": [],
+        "snippets": [
+            "IP [172.21.2.206]: ...},\n\t\t\tgetRemoteAddr: function () {\n\t\t\t\treturn '172.21.2.206';\n\t\t\t},\n\t\t\tgetRemoteHost: function () {\n\t\t\t\tretur...",
+            "IP [172.21.2.206]: ...},\n\t\t\tgetRemoteHost: function () {\n\t\t\t\treturn '172.21.2.206';\n\t\t\t},\n\t\t\tgetScopeGroupId: function () {\n\t\t\t\tret...",
+            "KW [admin]: ...ap = 'https://www.globe.gov/o/gov-globe-admin-theme/images/clay/icons.svg'; Life...",
+            "KW [debug]: ...1,490,494,499,491,496,492,493,495,220],\"debugEnabled\":false,\"loginRedirect\":\"\",\"...",
+            "KW [config]: ...return filter;\n\t\t\t},\n\t\t\tgetFilterConfig: function () {\n\t\t\t\tvar instance =...",
+            "KW [internal]: ...toryPortlet\",\"com_liferay_questions_web_internal_portlet_QuestionsPortlet\",\"com_...",
+            "KW [staging]: ...ole.error(error);}try {var MODULE_MAIN='staging-processes-web@5.0.65/index';var...",
+            "KW [dev]: ...<meta content=\"initial-scale=1.0, width=device-width\" name=\"viewport\" />...",
+            "KW [root]: ...ain-theme/images';\n\t\t\t},\n\t\t\tgetPathThemeRoot: function () {\n\t\t\t\treturn '/o/gov-g...",
+            "KW [password]: ...t\",\"com_liferay_login_web_portlet_ForgotPasswordPortlet\",\"com_liferay_portal_lan...",
+            "KW [token]: ...778012437966';\n\t\t\t}\n\t\t};\n\n\t\tLiferay.authToken = 'ZusmFQoe';\n\n\t\t\n\n\t\tLiferay.curre...",
+            "KW [auth]: ...&t=1778012437966';\n\t\t\t}\n\t\t};\n\n\t\tLiferay.authToken = 'ZusmFQoe';\n\n\t\t\n\n\t\tLiferay.c..."
+        ]
+    },
+    "cloud_buckets": [],
+    "sitemap_urls": []
+}

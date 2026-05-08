@@ -1,0 +1,219 @@
+{
+    "target": "https://smktarunabhakti.sch.id",
+    "date": "2026-05-08 01:46:48",
+    "security": {
+        "missing_headers": [
+            "Content-Security-Policy",
+            "Strict-Transport-Security",
+            "X-Frame-Options",
+            "X-Content-Type-Options",
+            "Referrer-Policy"
+        ],
+        "weak_headers": [],
+        "cookies": [],
+        "info": {}
+    },
+    "exposures": [
+        {
+            "path": "robots.txt",
+            "status": 200,
+            "size": 1861,
+            "url": "https://smktarunabhakti.sch.id/robots.txt"
+        },
+        {
+            "path": "sitemap.xml",
+            "status": 200,
+            "size": 669,
+            "url": "https://smktarunabhakti.sch.id/sitemap.xml"
+        }
+    ],
+    "js_analysis": [
+        {
+            "url": "https://smktarunabhakti.sch.id/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Application/Frontend/Assets/dist/n2.min.js?ver=52073c7b",
+            "data": {
+                "endpoints": [],
+                "urls": [],
+                "secrets": []
+            }
+        },
+        {
+            "url": "https://smktarunabhakti.sch.id/wp-includes/js/jquery/jquery.min.js?ver=3.6.0",
+            "data": {
+                "endpoints": [
+                    "//"
+                ],
+                "urls": [],
+                "secrets": []
+            }
+        },
+        {
+            "url": "https://smktarunabhakti.sch.id/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2",
+            "data": {
+                "endpoints": [],
+                "urls": [],
+                "secrets": []
+            }
+        }
+    ],
+    "opportunities": {
+        "internal_ips": [],
+        "keywords_found": [
+            "admin",
+            "dev",
+            "root",
+            "token",
+            "auth"
+        ],
+        "dangerous_params": [],
+        "snippets": [
+            "KW [admin]: ...sch.id/wp-content/plugins/post-carousel/admin/assets/css/fontello.css?ver=3.0.10...",
+            "KW [dev]: ...<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <met...",
+            "KW [root]: ...,\"empty\":\"0 results\",\"char_number\":\"3\",\"root\":\"Ly9zbWt0YXJ1bmFiaGFrdGkuc2NoLmlkL...",
+            "KW [token]: ...data-cf-beacon='{\"version\":\"2024.11.0\",\"token\":\"82380da795c54911b0dda8f8d2fac11b...",
+            "KW [auth]: ...<a href=\"https://smktarunabhakti.sch.id/author/kurikulum/\"\n\t\t\t\t\t\trel=\"author\">Bi..."
+        ]
+    },
+    "cloud_buckets": [],
+    "sitemap_urls": [
+        "https://smktarunabhakti.sch.id/wp-sitemap-posts-post-1.xml",
+        "https://smktarunabhakti.sch.id/wp-sitemap-posts-page-1.xml",
+        "https://smktarunabhakti.sch.id/wp-sitemap-taxonomies-category-1.xml",
+        "https://smktarunabhakti.sch.id/wp-sitemap-taxonomies-post_tag-1.xml",
+        "https://smktarunabhakti.sch.id/wp-sitemap-users-1.xml"
+    ],
+    "liferay_findings": [],
+    "bypass_success": [],
+    "hidden_paths": [
+        "/wp-admin/"
+    ],
+    "param_mining": [
+        {
+            "parameter": "admin=true",
+            "url": "https://smktarunabhakti.sch.id?admin=true",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "debug=1",
+            "url": "https://smktarunabhakti.sch.id?debug=1",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "test=1",
+            "url": "https://smktarunabhakti.sch.id?test=1",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "role=admin",
+            "url": "https://smktarunabhakti.sch.id?role=admin",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "privilege=high",
+            "url": "https://smktarunabhakti.sch.id?privilege=high",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "is_admin=1",
+            "url": "https://smktarunabhakti.sch.id?is_admin=1",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "config=true",
+            "url": "https://smktarunabhakti.sch.id?config=true",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "internal=true",
+            "url": "https://smktarunabhakti.sch.id?internal=true",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "show_all=true",
+            "url": "https://smktarunabhakti.sch.id?show_all=true",
+            "status": "Potential Trigger Found"
+        }
+    ],
+    "sourcemaps": [
+        {
+            "url": "https://smktarunabhakti.sch.id/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Application/Frontend/Assets/dist/n2.min.js?ver=52073c7b.map",
+            "type": "JavaScript Source Map Exposed"
+        },
+        {
+            "url": "https://smktarunabhakti.sch.id/wp-includes/js/jquery/jquery.min.js?ver=3.6.0.map",
+            "type": "JavaScript Source Map Exposed"
+        },
+        {
+            "url": "https://smktarunabhakti.sch.id/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2.map",
+            "type": "JavaScript Source Map Exposed"
+        }
+    ],
+    "s3_buckets": [],
+    "moodle_findings": [],
+    "wp_findings": [
+        {
+            "type": "WP User Found",
+            "detail": "ID: 5 | Name: hubin",
+            "url": "https://smktarunabhakti.sch.id/wp-json/wp/v2/users"
+        },
+        {
+            "type": "WP User Found",
+            "detail": "ID: 6 | Name: kesiswaan",
+            "url": "https://smktarunabhakti.sch.id/wp-json/wp/v2/users"
+        },
+        {
+            "type": "WP User Found",
+            "detail": "ID: 2 | Name: kurikulum",
+            "url": "https://smktarunabhakti.sch.id/wp-json/wp/v2/users"
+        },
+        {
+            "type": "WP User Found",
+            "detail": "ID: 3 | Name: saranaprasarana",
+            "url": "https://smktarunabhakti.sch.id/wp-json/wp/v2/users"
+        },
+        {
+            "type": "WP User Found",
+            "detail": "ID: 11 | Name: bpbk",
+            "url": "https://smktarunabhakti.sch.id/wp-json/wp/v2/users"
+        },
+        {
+            "type": "WP User Found",
+            "detail": "ID: 9 | Name: networking",
+            "url": "https://smktarunabhakti.sch.id/wp-json/wp/v2/users"
+        },
+        {
+            "type": "WP User Found",
+            "detail": "ID: 1 | Name: smktarunabhakti",
+            "url": "https://smktarunabhakti.sch.id/wp-json/wp/v2/users"
+        },
+        {
+            "type": "WP User Found",
+            "detail": "ID: 10 | Name: t4runa",
+            "url": "https://smktarunabhakti.sch.id/wp-json/wp/v2/users"
+        },
+        {
+            "type": "WP User Found",
+            "detail": "ID: 4 | Name: umm",
+            "url": "https://smktarunabhakti.sch.id/wp-json/wp/v2/users"
+        },
+        {
+            "type": "XML-RPC Enabled",
+            "detail": "Vulnerable to Brute Force & Pingback DDoS",
+            "url": "https://smktarunabhakti.sch.id/xmlrpc.php"
+        },
+        {
+            "type": "WP Plugin Detected",
+            "detail": "Plugin: contact-form-7 (Check for CVEs)",
+            "url": "https://smktarunabhakti.sch.id/wp-content/plugins/contact-form-7/"
+        },
+        {
+            "type": "WP Plugin Detected",
+            "detail": "Plugin: post-carousel (Check for CVEs)",
+            "url": "https://smktarunabhakti.sch.id/wp-content/plugins/post-carousel/"
+        },
+        {
+            "type": "WP Version Leak",
+            "detail": "Version: 6.0.11",
+            "url": "https://smktarunabhakti.sch.id"
+        }
+    ]
+}

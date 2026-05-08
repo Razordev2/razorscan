@@ -1,0 +1,105 @@
+{
+    "target": "https://www.globe.gov/news-events/globe-events/earth-science-week",
+    "date": "2026-05-07 23:54:34",
+    "security": {
+        "missing_headers": [
+            "Referrer-Policy"
+        ],
+        "weak_headers": [
+            {
+                "header": "CORS",
+                "value": "*",
+                "risk": "High"
+            }
+        ],
+        "cookies": [
+            {
+                "raw": "AWSALB=Ttghf3CSvUj9XlRfvs3L5ytUszGGJwLqgPKyrdbxDKNLWVgasH6SCJF2/phXqx4L9LjsWlDnTtn+kVy73bG0q/RDUqCdn31CcuywRpaDznFkD9oSHeOlHJTaKYs6; Expires=Thu, 14 May 2026 16:54:11 GMT; Path=/, AWSALBCORS=Ttghf3CSvUj9XlRfvs3L5ytUszGGJwLqgPKyrdbxDKNLWVgasH6SCJF2/phXqx4L9LjsWlDnTtn+kVy73bG0q/RDUqCdn31CcuywRpaDznFkD9oSHeOlHJTaKYs6; Expires=Thu, 14 May 2026 16:54:11 GMT; Path=/; SameSite=None, JSESSIONID=94076791AEFFF72E38785BA1CB775419; Path=/; Secure; HttpOnly, COOKIE_SUPPORT=true; Expires=Fri, 07 May 2027 16:54:11 GMT; Path=/; Secure; HttpOnly, GUEST_LANGUAGE_ID=en_US; Expires=Fri, 07 May 2027 16:54:11 GMT; Path=/; Secure; HttpOnly",
+                "issues": []
+            }
+        ],
+        "info": {}
+    },
+    "exposures": [],
+    "js_analysis": [
+        {
+            "url": "https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA",
+            "data": {
+                "endpoints": [
+                    "//",
+                    "/vpv404/"
+                ],
+                "urls": [
+                    "https://www.youtube.com/iframe_api",
+                    "https://dap.digitalgov.gov/web-vitals/dist/web-vitals.attribution.iife.js",
+                    "https://www.googletagmanager.com/gtag/js?id="
+                ],
+                "secrets": []
+            }
+        },
+        {
+            "url": "https://www.globe.gov/o/gov-globe-main-theme/js/duet-date-picker-1.4.0/duet.esm.js",
+            "data": {
+                "endpoints": [],
+                "urls": [],
+                "secrets": []
+            }
+        },
+        {
+            "url": "https://www.globe.gov/o/gov-globe-main-theme/js/duet-date-picker-1.4.0/duet.js",
+            "data": {
+                "endpoints": [
+                    "//",
+                    "/./",
+                    "/a/b",
+                    "/a/i"
+                ],
+                "urls": [
+                    "http://a",
+                    "http://a#\u0431",
+                    "http://x",
+                    "http://www.w3.org/1999/xhtml",
+                    "http://\u0442\u0435\u0441\u0442",
+                    "https://a@b",
+                    "http://a/c%20d?a=1&c=3"
+                ],
+                "secrets": []
+            }
+        }
+    ],
+    "opportunities": {
+        "internal_ips": [
+            "172.21.12.115",
+            "172.21.12.115"
+        ],
+        "keywords_found": [
+            "admin",
+            "debug",
+            "config",
+            "internal",
+            "staging",
+            "dev",
+            "root",
+            "password",
+            "token",
+            "auth"
+        ],
+        "dangerous_params": [],
+        "snippets": [
+            "IP [172.21.12.115]: ...},\n\t\t\tgetRemoteAddr: function () {\n\t\t\t\treturn '172.21.12.115';\n\t\t\t},\n\t\t\tgetRemoteHost: function () {\n\t\t\t\tretur...",
+            "IP [172.21.12.115]: ...},\n\t\t\tgetRemoteHost: function () {\n\t\t\t\treturn '172.21.12.115';\n\t\t\t},\n\t\t\tgetScopeGroupId: function () {\n\t\t\t\tret...",
+            "KW [admin]: ...ap = 'https://www.globe.gov/o/gov-globe-admin-theme/images/clay/icons.svg'; Life...",
+            "KW [debug]: ...1,490,494,499,491,496,492,493,495,220],\"debugEnabled\":false,\"loginRedirect\":\"\",\"...",
+            "KW [config]: ...return filter;\n\t\t\t},\n\t\t\tgetFilterConfig: function () {\n\t\t\t\tvar instance =...",
+            "KW [internal]: ...toryPortlet\",\"com_liferay_questions_web_internal_portlet_QuestionsPortlet\",\"com_...",
+            "KW [staging]: ...ole.error(error);}try {var MODULE_MAIN='staging-processes-web@5.0.65/index';var...",
+            "KW [dev]: ...<meta content=\"initial-scale=1.0, width=device-width\" name=\"viewport\" />...",
+            "KW [root]: ...ain-theme/images';\n\t\t\t},\n\t\t\tgetPathThemeRoot: function () {\n\t\t\t\treturn '/o/gov-g...",
+            "KW [password]: ...t\",\"com_liferay_login_web_portlet_ForgotPasswordPortlet\",\"com_liferay_portal_lan...",
+            "KW [token]: ...778012437966';\n\t\t\t}\n\t\t};\n\n\t\tLiferay.authToken = 'BbYS1cTB';\n\n\t\t\n\n\t\tLiferay.curre...",
+            "KW [auth]: ...&t=1778012437966';\n\t\t\t}\n\t\t};\n\n\t\tLiferay.authToken = 'BbYS1cTB';\n\n\t\t\n\n\t\tLiferay.c..."
+        ]
+    },
+    "cloud_buckets": [],
+    "sitemap_urls": []
+}

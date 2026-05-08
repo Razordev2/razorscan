@@ -1,0 +1,275 @@
+{
+    "target": "https://v-class.gunadarma.ac.id",
+    "date": "2026-05-08 01:19:10",
+    "security": {
+        "missing_headers": [
+            "Content-Security-Policy",
+            "Referrer-Policy"
+        ],
+        "weak_headers": [],
+        "cookies": [
+            {
+                "raw": "srv_id=79fe1dc4803cdbc146dc4d6805673deb; expires=Fri, 08-May-26 18:18:46 GMT; max-age=86400; domain=.v-class.gunadarma.ac.id; path=/, MoodleSession=hrfn75b02hrumjlkktmn65tare; path=/; secure; SameSite=None",
+                "issues": [
+                    "Missing Secure flag",
+                    "Missing HttpOnly flag"
+                ]
+            }
+        ],
+        "info": {}
+    },
+    "exposures": [],
+    "js_analysis": [
+        {
+            "url": "https://www.googletagmanager.com/gtag/js?id=UA-21467565-3",
+            "data": {
+                "endpoints": [
+                    "/_/service_worker",
+                    "/as/d/pagead/conversion",
+                    "/gtag/js",
+                    "/gtm.js",
+                    "/g/measurement/conversion",
+                    "/gtag/destination",
+                    "/g/d/ccm/conversion",
+                    "/as",
+                    "/gs/pagead/conversion",
+                    "/ga/g/c",
+                    "/as/d/ccm/conversion",
+                    "/gs",
+                    "/a",
+                    "/d/ccm/form-data",
+                    "/ddm/activity",
+                    "/g",
+                    "/ag/g/c",
+                    "/gs/ccm/collect",
+                    "/g/d/pagead/1p-conversion",
+                    "/gs/ccm/conversion",
+                    "/analytics.js",
+                    "/gs/measurement/conversion",
+                    "/d/pagead/form-data",
+                    "//"
+                ],
+                "urls": [
+                    "https://ade.googlesyndication.com",
+                    "https://www.google.com/rmkt/collect",
+                    "https://pagead2.googlesyndication.com",
+                    "https://adservice.google.com/pagead/regclk",
+                    "https://www.google.com",
+                    "https://pagead2.googlesyndication.com/measurement/conversion",
+                    "https://m.youtube.com",
+                    "https://pagead2.googlesyndication.com/ccm/conversion",
+                    "https://www.googletagmanager.com",
+                    "https://www.google.com/ccm/form-data",
+                    "https://www.google.com/travel/flights/click/conversion",
+                    "https://www.youtube.com",
+                    "https://www.googleadservices.com/ccm/conversion",
+                    "https://pagead2.googlesyndication.com/pagead/gen_204?id=tcfe",
+                    "https://www.google-analytics.com/analytics.js",
+                    "https://www.google.com/",
+                    "https://pagead2.googlesyndication.com/pagead/conversion",
+                    "https://www.google.com/measurement/conversion",
+                    "https://www.google.com/pagead/form-data",
+                    "https://cct.google/taggy/agent.js",
+                    "https://www.googleadservices.com/pagead/conversion",
+                    "https://www.googletagmanager.com/",
+                    "https://www.google.com/ccm/conversion",
+                    "https://googleads.g.doubleclick.net/pagead/viewthroughconversion",
+                    "https://www.google.com/pagead/uconversion",
+                    "https://ad.doubleclick.net/ccm/s/collect",
+                    "https://www.google.com/ccm/collect",
+                    "https://www.googletagmanager.com/static/service_worker/",
+                    "https://pagead2.googlesyndication.com/ccm/collect",
+                    "https://google.com/pagead/form-data",
+                    "https://www.googleadservices.com",
+                    "https://ad.doubleclick.net/activity;",
+                    "https://google.com/ccm/form-data",
+                    "https://www.google.com/ccm/geo",
+                    "https://www.google.com/pagead/1p-conversion"
+                ],
+                "secrets": []
+            }
+        },
+        {
+            "url": "https://v-class.gunadarma.ac.id/lib/javascript.php/1585289926/lib/babel-polyfill/polyfill.min.js",
+            "data": {
+                "endpoints": [
+                    "/a/b",
+                    "/a/i",
+                    "/./"
+                ],
+                "urls": [],
+                "secrets": []
+            }
+        },
+        {
+            "url": "https://v-class.gunadarma.ac.id/lib/javascript.php/1585289926/lib/mdn-polyfills/polyfill.js",
+            "data": {
+                "endpoints": [],
+                "urls": [],
+                "secrets": []
+            }
+        }
+    ],
+    "opportunities": {
+        "internal_ips": [],
+        "keywords_found": [
+            "admin",
+            "debug",
+            "config",
+            "dev",
+            "root",
+            "password",
+            "auth"
+        ],
+        "dangerous_params": [],
+        "snippets": [
+            "KW [admin]: ...stem_fontawesome\",\"jsrev\":\"1585289926\",\"admin\":\"admin\",\"svgicons\":true,\"usertime...",
+            "KW [debug]: ...component+'.'+me.type}};\nYUI_config = {\"debug\":false,\"base\":\"https:\\/\\/v-class.g...",
+            "KW [config]: ...926,\"templaterev\":\"1585289926\"};var yui1ConfigFn = function(me) {\n\n// Cannot rea...",
+            "KW [dev]: ...<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n</head...",
+            "KW [root]: ...oadstarttime = new Date();\nM.cfg = {\"wwwroot\":\"https:\\/\\/v-class.gunadarma.ac.id...",
+            "KW [password]: ...ss3\",\"moodle-core-event\"]},\"moodle-form-passwordunmask\":{\"requires\":[]},\"moodle-...",
+            "KW [auth]: ...<div class=\"mr-2 author-groups-container\" style=\"width: 4..."
+        ]
+    },
+    "cloud_buckets": [],
+    "sitemap_urls": [],
+    "liferay_findings": [
+        {
+            "path": "api/jsonws",
+            "url": "https://v-class.gunadarma.ac.id/api/jsonws",
+            "type": "Liferay Open"
+        },
+        {
+            "path": "c/portal/login",
+            "url": "https://v-class.gunadarma.ac.id/c/portal/login",
+            "type": "Liferay Open"
+        },
+        {
+            "path": "group/control_panel/manage",
+            "url": "https://v-class.gunadarma.ac.id/group/control_panel/manage",
+            "type": "Liferay Open"
+        },
+        {
+            "path": "api/jsonws/user/get-user-by-id",
+            "url": "https://v-class.gunadarma.ac.id/api/jsonws/user/get-user-by-id",
+            "type": "Liferay Open"
+        },
+        {
+            "path": "api/jsonws/company/get-company-by-id",
+            "url": "https://v-class.gunadarma.ac.id/api/jsonws/company/get-company-by-id",
+            "type": "Liferay Open"
+        },
+        {
+            "path": "o/api",
+            "url": "https://v-class.gunadarma.ac.id/o/api",
+            "type": "Liferay Open"
+        },
+        {
+            "path": "o/oauth2/authorize",
+            "url": "https://v-class.gunadarma.ac.id/o/oauth2/authorize",
+            "type": "Liferay Open"
+        },
+        {
+            "path": "group/guest/~/control_panel/manage",
+            "url": "https://v-class.gunadarma.ac.id/group/guest/~/control_panel/manage",
+            "type": "Liferay Open"
+        },
+        {
+            "path": "c/portal/layout?p_l_id=1",
+            "url": "https://v-class.gunadarma.ac.id/c/portal/layout?p_l_id=1",
+            "type": "Liferay Open"
+        },
+        {
+            "path": "combo/?browserId=chrome&minifierType=js&languageId=en_US&b=7410&t=1625612345678",
+            "url": "https://v-class.gunadarma.ac.id/combo/?browserId=chrome&minifierType=js&languageId=en_US&b=7410&t=1625612345678",
+            "type": "Liferay Open"
+        }
+    ],
+    "bypass_success": [],
+    "hidden_paths": [],
+    "param_mining": [
+        {
+            "parameter": "admin=true",
+            "url": "https://v-class.gunadarma.ac.id?admin=true",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "debug=1",
+            "url": "https://v-class.gunadarma.ac.id?debug=1",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "test=1",
+            "url": "https://v-class.gunadarma.ac.id?test=1",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "role=admin",
+            "url": "https://v-class.gunadarma.ac.id?role=admin",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "privilege=high",
+            "url": "https://v-class.gunadarma.ac.id?privilege=high",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "is_admin=1",
+            "url": "https://v-class.gunadarma.ac.id?is_admin=1",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "config=true",
+            "url": "https://v-class.gunadarma.ac.id?config=true",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "internal=true",
+            "url": "https://v-class.gunadarma.ac.id?internal=true",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "show_all=true",
+            "url": "https://v-class.gunadarma.ac.id?show_all=true",
+            "status": "Potential Trigger Found"
+        }
+    ],
+    "sourcemaps": [
+        {
+            "url": "https://www.googletagmanager.com/gtag/js?id=UA-21467565-3.map",
+            "type": "JavaScript Source Map Exposed"
+        }
+    ],
+    "s3_buckets": [],
+    "moodle_findings": [
+        {
+            "url": "https://v-class.gunadarma.ac.id/config.php",
+            "type": "Moodle Sensitive File Leak"
+        },
+        {
+            "url": "https://v-class.gunadarma.ac.id/lib/upgrade.txt",
+            "type": "Moodle Sensitive File Leak"
+        },
+        {
+            "url": "https://v-class.gunadarma.ac.id/lib/db/install.xml",
+            "type": "Moodle Sensitive File Leak"
+        },
+        {
+            "url": "https://v-class.gunadarma.ac.id/user/pix.php",
+            "type": "Moodle Sensitive File Leak"
+        },
+        {
+            "url": "https://v-class.gunadarma.ac.id/local/mobile/check.php",
+            "type": "Moodle Sensitive File Leak"
+        },
+        {
+            "url": "https://v-class.gunadarma.ac.id/theme/upgrade.txt",
+            "type": "Moodle Sensitive File Leak"
+        },
+        {
+            "url": "https://v-class.gunadarma.ac.id/mod/forum/upgrade.txt",
+            "type": "Moodle Sensitive File Leak"
+        }
+    ]
+}

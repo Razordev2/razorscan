@@ -1,0 +1,162 @@
+{
+    "target": "https://gunadarma.ac.id",
+    "date": "2026-05-08 01:00:31",
+    "security": {
+        "missing_headers": [
+            "Content-Security-Policy",
+            "Strict-Transport-Security",
+            "X-Frame-Options",
+            "X-Content-Type-Options",
+            "Referrer-Policy"
+        ],
+        "weak_headers": [],
+        "cookies": [],
+        "info": {}
+    },
+    "exposures": [
+        {
+            "path": "robots.txt",
+            "status": 200,
+            "size": 120,
+            "url": "https://gunadarma.ac.id/robots.txt"
+        },
+        {
+            "path": "sitemap.xml",
+            "status": 200,
+            "size": 1677,
+            "url": "https://gunadarma.ac.id/sitemap.xml"
+        }
+    ],
+    "js_analysis": [
+        {
+            "url": "https://www.gunadarma.ac.id/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "data": {
+                "endpoints": [
+                    "//"
+                ],
+                "urls": [],
+                "secrets": []
+            }
+        },
+        {
+            "url": "https://www.gunadarma.ac.id/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "data": {
+                "endpoints": [],
+                "urls": [],
+                "secrets": []
+            }
+        },
+        {
+            "url": "https://www.gunadarma.ac.id/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.8.6.4",
+            "data": {
+                "endpoints": [],
+                "urls": [],
+                "secrets": []
+            }
+        }
+    ],
+    "opportunities": {
+        "internal_ips": [],
+        "keywords_found": [
+            "admin",
+            "debug",
+            "config",
+            "dev",
+            "root"
+        ],
+        "dangerous_params": [],
+        "snippets": [
+            "KW [admin]: ...c_add_to_cart_params = {\"ajax_url\":\"/wp-admin/admin-ajax.php\",\"wc_ajax_url\":\"/?w...",
+            "KW [debug]: ...\"edit\":false,\"wpPreview\":false,\"isScriptDebug\":false},\"i18n\":{\"shareOnFacebook\":...",
+            "KW [config]: ...\">\n/* <![CDATA[ */\nvar elementorFrontendConfig = {\"environmentMode\":{\"edit\":fals...",
+            "KW [dev]: ...>\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\t<link r...",
+            "KW [root]: ...<style id=\"learn-press-custom-css\">\n\t\t\t:root {\n\t\t\t\t--lp-cotainer-max-with: 1290p..."
+        ]
+    },
+    "cloud_buckets": [],
+    "sitemap_urls": [
+        "https://www.gunadarma.ac.id/wp-sitemap-posts-post-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-posts-page-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-posts-product-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-posts-lp_course-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-posts-lp_lesson-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-posts-lp_quiz-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-posts-lp_question-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-posts-simple_event-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-posts-eduvibe_header-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-posts-eduvibe_footer-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-taxonomies-category-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-taxonomies-post_tag-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-taxonomies-product_cat-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-taxonomies-product_tag-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-taxonomies-course_category-1.xml",
+        "https://www.gunadarma.ac.id/wp-sitemap-users-1.xml"
+    ],
+    "liferay_findings": [],
+    "bypass_success": [],
+    "hidden_paths": [
+        "/wp-admin/"
+    ],
+    "param_mining": [
+        {
+            "parameter": "admin=true",
+            "url": "https://gunadarma.ac.id?admin=true",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "debug=1",
+            "url": "https://gunadarma.ac.id?debug=1",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "test=1",
+            "url": "https://gunadarma.ac.id?test=1",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "role=admin",
+            "url": "https://gunadarma.ac.id?role=admin",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "privilege=high",
+            "url": "https://gunadarma.ac.id?privilege=high",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "is_admin=1",
+            "url": "https://gunadarma.ac.id?is_admin=1",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "config=true",
+            "url": "https://gunadarma.ac.id?config=true",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "internal=true",
+            "url": "https://gunadarma.ac.id?internal=true",
+            "status": "Potential Trigger Found"
+        },
+        {
+            "parameter": "show_all=true",
+            "url": "https://gunadarma.ac.id?show_all=true",
+            "status": "Potential Trigger Found"
+        }
+    ],
+    "sourcemaps": [
+        {
+            "url": "https://www.gunadarma.ac.id/wp-includes/js/jquery/jquery.min.js?ver=3.7.1.map",
+            "type": "JavaScript Source Map Exposed"
+        },
+        {
+            "url": "https://www.gunadarma.ac.id/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1.map",
+            "type": "JavaScript Source Map Exposed"
+        },
+        {
+            "url": "https://www.gunadarma.ac.id/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.8.6.4.map",
+            "type": "JavaScript Source Map Exposed"
+        }
+    ],
+    "s3_buckets": []
+}

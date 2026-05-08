@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorscan Report - {{ target }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f1f5f9;
+            --primary: #38bdf8;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            border-bottom: 2px solid var(--card);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        h1 { color: var(--primary); }
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        .badge-danger { background: var(--danger); }
+        .badge-warning { background: var(--warning); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid #334155;
+        }
+        th { color: var(--primary); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Razorscan Security Report</h1>
+            <p>Target: <strong>{{ target }}</strong></p>
+            <p>Date: {{ date }}</p>
+        </header>
+
+        <section class="card">
+            <h2>Header Analysis</h2>
+            <table>
+                <tr><th>Issue</th><th>Severity</th></tr>
+                {% for header in security.missing_headers %}
+                <tr>
+                    <td>Missing {{ header }}</td>
+                    <td><span class="badge badge-warning">Medium</span></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Exposed Files</h2>
+            <table>
+                <tr><th>File Path</th><th>Status</th><th>Action</th></tr>
+                {% for exposure in exposures %}
+                <tr>
+                    <td>{{ exposure.path }}</td>
+                    <td><span class="badge badge-danger">200 OK</span></td>
+                    <td><a href="{{ exposure.url }}" target="_blank" style="color: var(--primary)">Verify</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+    </div>
+</body>
+</html>
