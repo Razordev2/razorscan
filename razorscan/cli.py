@@ -32,6 +32,7 @@ from razorscan.modules.api_hunter import APIHunter
 from razorscan.modules.moodle_hunter import MoodleHunter
 from razorscan.modules.wordpress_hunter import WordPressHunter
 from razorscan.modules.credential_hunter import CredentialHunter
+from razorscan.modules.razor_brute import RazorBrute
 
 app = typer.Typer(help="Razorscan: Professional Bug Bounty Analysis Tool")
 console = Console()
@@ -544,6 +545,50 @@ def api_audit(target: str):
 
     asyncio.run(run())
 
+@app.command()
+def wp_brute(
+    target: str = typer.Argument(..., help="WordPress Target URL"),
+    username: str = typer.Argument(..., help="Username to brute force"),
+    wordlist: str = typer.Argument(..., help="Path to password list file (e.g., @pass.txt)")
+):
+    """Brute force WordPress login via XML-RPC or Login Page."""
+    if not target.startswith("http"):
+        target = f"https://{target}"
+    
+    # Remove @ if present in wordlist path
+    wordlist_path = wordlist.lstrip("@")
+    
+    import os
+    if not os.path.exists(wordlist_path):
+        console.print(f"[red]Error: Wordlist file {wordlist_path} not found.[/red]")
+        return
+
+    with open(wordlist_path, "r", encoding="utf-8", errors="ignore") as f:
+        passwords = [line.strip() for line in f if line.strip()]
+
+    console.print(Panel.fit(f"🔨 Brute Forcing WordPress: {target}\n👤 User: {username}\n📚 Wordlist: {wordlist_path} ({len(passwords)} passwords)", style="bold red"))
+    
+    requester = RazorRequester()
+    brute = RazorBrute(requester)
+    
+    async def run_brute():
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            console=console,
+            transient=True
+        ) as progress:
+            task = progress.add_task(description=f"[cyan]Testing passwords for {username}...", total=len(passwords))
+            
+            found_pw = await brute.brute_wp(target, username, passwords)
+            
+            if found_pw:
+                console.print(Panel(f"[bold green]SUCCESS![/bold green]\n\nTarget: {target}\nUsername: [yellow]{username}[/yellow]\nPassword: [bold green]{found_pw}[/bold green]", title="🔓 Credential Found", border_style="green"))
+            else:
+                console.print("[red]Brute force finished. No valid password found.[/red]")
+
+    asyncio.run(run_brute())
+
 def show_menu():
     """Display a premium interactive menu."""
     from rich.prompt import Prompt
@@ -576,13 +621,14 @@ def show_menu():
         menu_table.add_row("5", "🎓 [bold]Moodle Security Check[/bold] (Vulnerabilities & Exposures)")
         menu_table.add_row("6", "💎 [bold]Credential & Backup Hunter[/bold] (Config files, .env, backups)")
         menu_table.add_row("7", "🪣 [bold]S3 Bucket Scanner[/bold] (Public buckets discovery)")
-        menu_table.add_row("8", "⚡ [bold]Manual HTTP Repeater[/bold] (Custom requests)")
-        menu_table.add_row("9", "📊 [bold]JSON Diff Tool[/bold] (Identify IDOR/Auth bypass)")
+        menu_table.add_row("8", "🔨 [bold red]WP Brute Force[/bold] (XML-RPC & Login Brute)")
+        menu_table.add_row("9", "⚡ [bold]Manual HTTP Repeater[/bold] (Custom requests)")
+        menu_table.add_row("10", "📊 [bold]JSON Diff Tool[/bold] (Identify IDOR/Auth bypass)")
         menu_table.add_row("0", "❌ [bold red]Exit[/bold red]")
         
         console.print(Panel(menu_table, title="[bold blue]MAIN MENU[/bold blue]", border_style="blue"))
         
-        choice = Prompt.ask("[bold yellow]Choose an option[/bold yellow]", choices=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], default="0")
+        choice = Prompt.ask("[bold yellow]Choose an option[/bold yellow]", choices=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], default="0")
         
         if choice == "0":
             console.print("[bold red]Exiting Razorscan. Happy Hunting![/bold red]")
@@ -675,11 +721,18 @@ def show_menu():
                 asyncio.run(s3_run())
                 Prompt.ask("\n[dim]Press Enter to return to menu...[/dim]")
         elif choice == "8":
+            target = Prompt.ask("[bold cyan]Enter WordPress URL[/bold cyan]")
+            user = Prompt.ask("[bold cyan]Enter Username[/bold cyan]")
+            passlist = Prompt.ask("[bold cyan]Enter Password List Path (e.g. pass.txt)[/bold cyan]")
+            if target and user and passlist:
+                wp_brute(target, user, passlist)
+                Prompt.ask("\n[dim]Press Enter to return to menu...[/dim]")
+        elif choice == "9":
             url = Prompt.ask("[bold cyan]Enter URL[/bold cyan]")
             if url:
                 request(url)
                 Prompt.ask("\n[dim]Press Enter to return to menu...[/dim]")
-        elif choice == "9":
+        elif choice == "10":
             file1 = Prompt.ask("[bold cyan]Enter Path to JSON 1[/bold cyan]")
             file2 = Prompt.ask("[bold cyan]Enter Path to JSON 2[/bold cyan]")
             if file1 and file2:
