@@ -67,7 +67,7 @@ class RazorBrute:
                     "testcookie": "1"
                 }
                 resp = await self.requester.fetch(login_url, method="POST", data=data)
-                if resp and (resp.status_code == 302 or "wp-admin" in resp.url):
+                if resp and (resp.status_code == 302 or "wp-admin" in str(resp.url)):
                     return pw
         
         return None

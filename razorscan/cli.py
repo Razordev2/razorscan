@@ -1,6 +1,8 @@
 import typer
 import asyncio
 import json
+import random
+import os
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from rich.console import Console
@@ -549,16 +551,31 @@ def api_audit(target: str):
 def wp_brute(
     target: str = typer.Argument(..., help="WordPress Target URL"),
     username: str = typer.Argument(..., help="Username to brute force"),
-    wordlist: str = typer.Argument(..., help="Path to password list file (e.g., @pass.txt)")
+    wordlist: str = typer.Argument(None, help="Path to password list file (e.g., @pass.txt)")
 ):
     """Brute force WordPress login via XML-RPC or Login Page."""
     if not target.startswith("http"):
         target = f"https://{target}"
     
-    # Remove @ if present in wordlist path
-    wordlist_path = wordlist.lstrip("@")
-    
+    # Handle default passwordlist if empty
     import os
+    if not wordlist or wordlist.strip() == "":
+        default_dir = r"c:\Users\User\Downloads\NASA\passwordlist"
+        if os.path.exists(default_dir):
+            files = [f for f in os.listdir(default_dir) if f.endswith(".txt")]
+            if files:
+                wordlist_path = os.path.join(default_dir, random.choice(files))
+                console.print(f"[dim yellow]! No wordlist specified, picking random: {os.path.basename(wordlist_path)}[/dim yellow]")
+            else:
+                console.print("[red]Error: No .txt files in default passwordlist directory.[/red]")
+                return
+        else:
+            console.print(f"[red]Error: Default passwordlist directory not found at {default_dir}[/red]")
+            return
+    else:
+        # Remove @ if present in wordlist path
+        wordlist_path = wordlist.lstrip("@")
+    
     if not os.path.exists(wordlist_path):
         console.print(f"[red]Error: Wordlist file {wordlist_path} not found.[/red]")
         return
@@ -598,7 +615,7 @@ def show_menu():
     
     while True:
         console.clear()
-        banner = """
+        banner = r"""
 [bold red]  _____   ____  ______ ____  _____   _____  _____          _   _ 
  |  __ \ / __ \|___  /|  _ \ / __ \ / ____|/ ____|   /\   | \ | |
  | |__) | |  | |  / / | |_) | |  | | (___ | |       /  \  |  \| |
@@ -621,7 +638,7 @@ def show_menu():
         menu_table.add_row("5", "🎓 [bold]Moodle Security Check[/bold] (Vulnerabilities & Exposures)")
         menu_table.add_row("6", "💎 [bold]Credential & Backup Hunter[/bold] (Config files, .env, backups)")
         menu_table.add_row("7", "🪣 [bold]S3 Bucket Scanner[/bold] (Public buckets discovery)")
-        menu_table.add_row("8", "🔨 [bold red]WP Brute Force[/bold] (XML-RPC & Login Brute)")
+        menu_table.add_row("8", "🔨 [bold red]WP Brute Force[/bold red] (XML-RPC & Login Brute)")
         menu_table.add_row("9", "⚡ [bold]Manual HTTP Repeater[/bold] (Custom requests)")
         menu_table.add_row("10", "📊 [bold]JSON Diff Tool[/bold] (Identify IDOR/Auth bypass)")
         menu_table.add_row("0", "❌ [bold red]Exit[/bold red]")
@@ -723,8 +740,8 @@ def show_menu():
         elif choice == "8":
             target = Prompt.ask("[bold cyan]Enter WordPress URL[/bold cyan]")
             user = Prompt.ask("[bold cyan]Enter Username[/bold cyan]")
-            passlist = Prompt.ask("[bold cyan]Enter Password List Path (e.g. pass.txt)[/bold cyan]")
-            if target and user and passlist:
+            passlist = Prompt.ask("[bold cyan]Enter Password List Path (leave empty for random)[/bold cyan]", default="")
+            if target and user:
                 wp_brute(target, user, passlist)
                 Prompt.ask("\n[dim]Press Enter to return to menu...[/dim]")
         elif choice == "9":
